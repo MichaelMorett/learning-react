@@ -1,9 +1,23 @@
-import Like from "./components/Like";
+import { useState } from "react";
 
 function App() {
+  const [tags, setTags] = useState(["happy", "cheerful"]);
+
+  const handleClick = () => {
+    //Add
+    setTags([...tags, "exciting"]);
+
+    //Remove
+    setTags(tags.filter((tag) => tag !== "happy"));
+
+    //Update
+    setTags(tags.map((tag) => (tag === "happy" ? "hapiness" : tag)));
+  };
+
   return (
     <div>
-      <Like onClick={() => console.log("Clicked")} />
+      {tags}
+      <button onClick={handleClick}>Click Me</button>
     </div>
   );
 }
