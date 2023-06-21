@@ -3,7 +3,7 @@ import React, { FormEvent, useState } from "react";
 const Form = () => {
   const [person, setPerson] = useState({
     name: "",
-    age: 0,
+    age: "",
   });
 
   const handleSubmit = (event: FormEvent) => {
@@ -23,6 +23,7 @@ const Form = () => {
           }
           id="name"
           type="text"
+          value={person.name}
           className="form-control"
         />
       </div>
@@ -36,6 +37,7 @@ const Form = () => {
           }
           id="age"
           type="number"
+          value={person.age}
           className="form-control"
         />
       </div>
